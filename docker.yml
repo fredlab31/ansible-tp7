@@ -4,7 +4,7 @@
   become: yes
   tasks:
 
-    - name: Installation des dépendances de docker
+    - name: Installation des dépendances 
       yum:
         name: "{{ item }}"
         state: present
@@ -13,17 +13,8 @@
         - yum-utils
         - device-mapper-persistent-data
         - lvm2
-
-    - name: Ajout du repo docker
-      get_url:
-        url: https://download.docker.com/linux/centos/docker-ce.repo
-        dest: /etc/yum.repos.d/docker-ce.repo
-        mode: 0644
-
-    - name: Installation de docker-ce
-      yum:
-        name: docker-ce
-        state: present
+        - python3
+        - docker-ce
 
     - name: Start et enable du daemon docker
       service:
