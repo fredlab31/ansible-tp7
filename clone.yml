@@ -4,7 +4,11 @@
   become: yes
 
   tasks:
+    - name: Install de git
+      yum:
+        name: git
+        state: present
     - name: Clone du repo
-      git:
+      ansible.builtin.git:
         repo: https://github.com/diranetafen/static-website-example
         dest: /data
