@@ -1,0 +1,10 @@
+---
+- name: "Installation de docker"
+  import_playbook: docker.yml
+- name: "Installation du package docker"
+  import_playbook: pip.yml
+- name: "Installation de git et clone du repo"
+  import_playbook: clone.yml
+- name: "Déploiement du conteneur webapp"
+  import_playbook: webapp.yml
+

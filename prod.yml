@@ -1,0 +1,5 @@
+---
+prod:
+  hosts:
+    client1:
+    client2:

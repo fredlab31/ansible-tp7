@@ -1,0 +1,9 @@
+- name: Installation du package docker
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install docker python package
+      pip:
+        name: docker
+        executable: pip3

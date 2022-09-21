@@ -1,0 +1,17 @@
+---
+- name : Déploiement de la webapp
+  hosts: all
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
+  tasks:
+    - name: Déploiement de la webapp
+      docker_container:
+        name: webapp
+        image: nginx:1.23
+        state: started
+        volumes:
+          - /data:/usr/share/nginx/html
+        ports:
+         - "80:80"
