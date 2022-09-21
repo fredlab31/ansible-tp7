@@ -14,7 +14,7 @@
         - device-mapper-persistent-data
         - lvm2
         - python3
-        - docker-ce
+        - docker
 
     - name: Start et enable du daemon docker
       service:
